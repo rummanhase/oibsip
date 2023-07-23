@@ -9,7 +9,7 @@
   z-index: 100;
 }
 
-.my-about-page , .my-contact-page{
+.my-about-page , .my-contact-page , .my-home-page{
   overflow-y: auto;
-  max-height: calc(100vh - 100px); /* Adjust the height to your preference */
+  max-height: calc(100vh - 165px); /* Adjust the height to your preference */
 }

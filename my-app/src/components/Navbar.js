@@ -2,18 +2,18 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
-import {BiSolidOffer} from 'react-icons/bi' 
 import "../App.css"
 import {LinkContainer} from "react-router-bootstrap"
+import {Image } from 'react-bootstrap'
 
 function BasicExample() {
   return (
     <Navbar expand="lg" className="bg-body-tertiary " data-bs-theme="dark" style={{ color: 'whitesmoke' }}>
-         <Container fluid>
-         <h6 className='text-warning offer'>
-        <BiSolidOffer/>&nbsp;
-        100% free delivery 
-        </h6>
+         <Container>
+         <Navbar.Brand className='offer'>
+            <Image src="https://th.bing.com/th/id/OIP.Y2E8m9FNAX_3v4JsCYKaFgHaHa?pid=ImgDet&w=506&h=506&rs=1" alt='logo' style={{height :"50px" }}/>
+        </Navbar.Brand>
+         
          </Container>
       <Container>
        
@@ -22,7 +22,7 @@ function BasicExample() {
         <Container>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="me-auto">
+          <Nav className="ms-auto">
             <LinkContainer to="/">
                 <Nav.Link >Menu</Nav.Link>
             </LinkContainer>
