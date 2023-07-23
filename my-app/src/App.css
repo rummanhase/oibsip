@@ -13,3 +13,6 @@
   overflow-y: auto;
   max-height: calc(100vh - 165px); /* Adjust the height to your preference */
 }
+select{
+  cursor: pointer;
+}
