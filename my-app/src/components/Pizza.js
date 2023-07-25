@@ -7,13 +7,15 @@ let arr = [1,2,3,4,5,6,7,8,9,10]
 
 
 function Pizza({pizza}) {
-    let imageUrl = pizza.image;
+    console.log(pizza.varient);
+    
     const [varient , setVarient] = useState('small');
     const [quant , setQuant] = useState(1)
+   
   return (
 
     <Card style={{ width: '15.8rem' , marginTop:'3px'}}>
-      <Card.Img variant="top" src={imageUrl} style={{ width: '14rem' ,margin:'auto' , height:"120px", marginBottom:'3px'}}/>
+      <Card.Img variant="top" src={pizza.image} style={{ width: '14rem' ,margin:'auto' , height:"120px", marginBottom:'3px'}}/>
       <Card.Body>
         <Card.Title>{pizza.name}</Card.Title> <hr/>
         <Card.Text className="mb-2 text-muted"><p style={{fontSize:'small'}}>{pizza.description}</p></Card.Text>
@@ -33,7 +35,7 @@ function Pizza({pizza}) {
                         <option key={varient} value={varient}>
                             {varient}
                         </option>
-                    ))}
+                    ))} 
                     </Form.Select>
         
                 </Col>
