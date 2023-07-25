@@ -1,11 +1,14 @@
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
 import {BiSolidOffer} from 'react-icons/bi' 
 import {LinkContainer} from "react-router-bootstrap"
+import { useDispatch , useSelector} from "react-redux";
 
 function NavbarSec() {
+  const dispatch = useDispatch();
+
+  const cartState = useSelector(state => state.cartReducer)
   return (
     <Navbar expand="lg" className="bg-body-tertiary" collapseOnSelect>
       <Container>
@@ -20,7 +23,9 @@ function NavbarSec() {
             <Nav.Link >Login</Nav.Link>
             </LinkContainer>
             <LinkContainer to="/cart">
-            <Nav.Link >Cart</Nav.Link>
+            <Nav.Link >Cart &nbsp;
+              {cartState.cartItems.length}
+            </Nav.Link>
             </LinkContainer>
           </Nav>
         </Navbar.Collapse>

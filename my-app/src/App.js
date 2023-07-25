@@ -6,6 +6,7 @@ import Navbar from "./components/Navbar";
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import NavbarSec from './components/NavbarSec';
 import HomeScreen from './screen/HomeScreen';
+import CartScreen from './screen/CartScreen';
 
 function App() {
   return (
@@ -14,7 +15,7 @@ function App() {
       <NavbarSec/>
       <Routes>
       <Route path="/login" element={<Home />} />
-      <Route path="/cart" element={<Home />} />
+      <Route path="/cart" element={<CartScreen />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/about" element={<About />} />
         <Route path='/' element={<HomeScreen />} />

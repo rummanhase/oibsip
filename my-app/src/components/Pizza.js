@@ -2,16 +2,22 @@ import React ,{useState} from 'react'
 import Button from 'react-bootstrap/Button';
 import {Card , Row , Col , Form} from 'react-bootstrap';
 import {FaRupeeSign} from "react-icons/fa"
-import "../App.css"
-let arr = [1,2,3,4,5,6,7,8,9,10]
+import "../App.css";
+import { addToCart } from "../actions/cartActions";
+import { useDispatch } from 'react-redux';
+let arr = [1,2,3,4,5,6,7,8,9,10];
 
 
 function Pizza({pizza}) {
-    console.log(pizza.varient);
-    
     const [varient , setVarient] = useState('small');
-    const [quant , setQuant] = useState(1)
+    const [quant , setQuant] = useState(1);
+
+    const dispatch = useDispatch()
    
+    const addToCartHandler = () => {
+        dispatch(addToCart(pizza , varient , quant))
+      }
+
   return (
 
     <Card style={{ width: '15.8rem' , marginTop:'3px'}}>
@@ -58,7 +64,9 @@ function Pizza({pizza}) {
             </Col>
 
             <Col md={6}>
-            <Button variant="outline-success" size="sm">Add to Cart</Button>
+            <Button 
+            onClick={addToCartHandler}
+            variant="outline-success" size="sm">Add to Cart</Button>
             </Col>
         </Row>
         
