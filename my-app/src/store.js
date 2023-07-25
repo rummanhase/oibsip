@@ -1,8 +1,10 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { getAllPizzaReducer } from './reducers/pizzaReducers';
+import { cartReducer } from "./reducers/cartReducer";
 
 export const store = configureStore({
   reducer: {
-    getAllPizzaReducer: getAllPizzaReducer
+    getAllPizzaReducer: getAllPizzaReducer,
+    cartReducer : cartReducer
   }
 })
