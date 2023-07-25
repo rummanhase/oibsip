@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const pizzaSchema = mongoose.Schema({
     name:String,
-    varient:[],
+    varients:[],
     prices:[],
     category:String,
     image:String,
