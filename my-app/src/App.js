@@ -7,6 +7,8 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import NavbarSec from './components/NavbarSec';
 import HomeScreen from './screen/HomeScreen';
 import CartScreen from './screen/CartScreen';
+import Register from './screen/Register';
+import LoginScreen from './screen/LoginScreen';
 
 function App() {
   return (
@@ -14,7 +16,8 @@ function App() {
       <Navbar sticky="top"/>
       <NavbarSec/>
       <Routes>
-      <Route path="/login" element={<Home />} />
+      <Route path="/register" element={<Register />} />
+      <Route path="/login" element={<LoginScreen />} />
       <Route path="/cart" element={<CartScreen />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/about" element={<About />} />

@@ -6,7 +6,7 @@ import {
   ListGroup,
   Badge,
   Image,
-  Button,
+  Button,Card
 } from "react-bootstrap";
 import { useDispatch , useSelector} from "react-redux";
 import { addToCart , deleteFromCart} from "../actions/cartActions"
@@ -16,6 +16,7 @@ function CartScreen() {
   const cartState = useSelector((state) => state.cartReducer);
   const cartItems = cartState.cartItems;
   const dispatch = useDispatch();
+  const grandTotal = cartItems.reduce((x , item) => x + item.price , 0)
   return (
     <Container>
       <Row>
@@ -67,7 +68,17 @@ function CartScreen() {
           </ListGroup>
         </Col>
         <Col md={5}>
-          <h3>Payment Gateway</h3>
+          <h3></h3>
+          <Card style={{ width: '25rem' }}>
+      <Card.Img variant="top" src="https://img.freepik.com/free-icon/shopping-cart-empty-side-view_318-50806.jpg?size=626&ext=jpg&ga=GA1.2.1753554234.1690380494&semt=sph" style={{padding:".5rem 5rem"}}/>
+      <Card.Body>
+        <Card.Title>Payment Gateway</Card.Title>
+        <Card.Text>
+          Grand Total (including all taxes) : {grandTotal}
+        </Card.Text>
+        <Button variant="primary">Go somewhere</Button>
+      </Card.Body>
+    </Card>
         </Col>
       </Row>
     </Container>
